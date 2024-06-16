@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<title>Products</title>
 </head>
 <body>
 	<h1>Product</h1>
@@ -16,6 +16,7 @@
 				<th>Price</th>
 				<th>Qty</th>
 				<th>Description</th>
+				<th>Edit</th>
 			</tr>
 			@foreach ($products as $product)
 				<tr>
@@ -24,6 +25,9 @@
 					<td>{{$product -> price}}</td>
 					<td>{{$product -> qty}}</td>
 					<td>{{$product -> description}}</td>
+					<td>
+						<a href="{{route('products.edit', ['product' => $product])}}">Edit</a>
+					</td>
 				</tr>
 			@endforeach
 		</table>
